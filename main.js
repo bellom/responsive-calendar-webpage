@@ -28,6 +28,11 @@ function jump() {
     showCalendar(currentMonth, currentYear);
 }
 
+const events = {
+    [new Date(2020, 2, 26)]: "Technical Test",
+    [new Date(2020, 2, 28)]: "Technical Test Result"
+}
+
 function showCalendar(month, year) {
 
     let firstDay = (new Date(year, month)).getDay();
@@ -64,23 +69,18 @@ function showCalendar(month, year) {
             else {
                 let cell = document.createElement("td");
                 let cellText = document.createTextNode(date);
+                let link = document.createElement('a');  
                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     cell.classList.add("bg-info");
                 } // color today's date
                 cell.appendChild(cellText);
                 row.appendChild(cell);
                 date++;
+                date.append(link)
             }
-
-
         }
 
         tbl.appendChild(row); // appending each row into calendar body.
-    }
-
-    const events = {
-        [new Date(2020, 2, 26)]: "Technical Test",
-        [new Date(2020, 2, 28)]: "Technical Test Result",
     }
 
 }
