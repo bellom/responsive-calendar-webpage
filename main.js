@@ -29,7 +29,7 @@ function jump() {
 }
 
 const events = {
-    [new Date(2020, 2, 26)]: "Technical Test",
+    [new Date(2020, 2, 26)]: "Technical Test", 
     [new Date(2020, 2, 28)]: "Technical Test Result"
 }
 
@@ -53,34 +53,35 @@ function showCalendar(month, year) {
     for (let i = 0; i < 6; i++) {
         // creates a table row
         let row = document.createElement("tr");
-
+        
         //creating individual cells, filing them up with data.
         for (let j = 0; j < 7; j++) {
             if (i === 0 && j < firstDay) {
                 let cell = document.createElement("td");
+                let aTag = document.createElement('a'); 
                 let cellText = document.createTextNode("");
+                
                 cell.appendChild(cellText);
+                cell.appendChild(aTag);
                 row.appendChild(cell);
+
             }
             else if (date > daysInMonth) {
                 break;
             }
-
             else {
                 let cell = document.createElement("td");
                 let cellText = document.createTextNode(date);
-                let link = document.createElement('a');  
+    
                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     cell.classList.add("bg-info");
                 } // color today's date
                 cell.appendChild(cellText);
                 row.appendChild(cell);
                 date++;
-                date.append(link)
             }
         }
 
         tbl.appendChild(row); // appending each row into calendar body.
     }
-
 }
