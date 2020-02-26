@@ -5,63 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mumShape Task</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="container">
     <aside>
-      <span class="glyphicon glyphicon-user"></span><div class="side-text"> side-panel</div>
+      <span class="glyphicon glyphicon-user"></span><div class="side-text"> Side-Panel</div>
     </aside>
     <main>
-
       <div class="sub-main1">
-        <div class="container col-sm-4 col-md-7 col-lg-4 mt-5">
-          <div class="card">
+        <div class="container col-sm-4 col-md-7 col-lg-4 mt-5 calendar">
+          <div class="card text-center">
               <h3 class="card-header" id="monthAndYear"></h3>
               <table class="table table-bordered table-responsive-sm" id="calendar">
-                  <thead>
-                  <tr>
-                      <th>Sun</th>
-                      <th>Mon</th>
-                      <th>Tue</th>
-                      <th>Wed</th>
-                      <th>Thu</th>
-                      <th>Fri</th>
-                      <th>Sat</th>
-                  </tr>
-                  </thead>
-      
-                  <tbody id="calendar-body">
-      
-                  </tbody>
+                <thead>
+                <tr>
+                  <th>Sun</th>
+                  <th>Mon</th>
+                  <th>Tue</th>
+                  <th>Wed</th>
+                  <th>Thu</th>
+                  <th>Fri</th>
+                  <th>Sat</th>
+                </tr>
+                </thead>
+    
+                <tbody id="calendar-body">
+    
+                </tbody>
               </table>
       
               <div class="form-inline">
       
-                  <button class="btn btn-outline-primary col-sm-6" id="previous" onclick="previous()">Previous</button>
-      
-                  <button class="btn btn-outline-primary col-sm-6" id="next" onclick="next()">Next</button>
+                <button class="btn btn-outline-primary col-sm-6" id="previous" onclick="previous()">Previous</button>
+    
+                <button class="btn btn-outline-primary col-sm-6" id="next" onclick="next()">Next</button>
               </div>
               <br/>
               <form class="form-inline">
                   <select class="form-control col-sm-4" name="month" id="month" onchange="jump()">
-                      <option value=0>Jan</option>
-                      <option value=1>Feb</option>
-                      <option value=2>Mar</option>
-                      <option value=3>Apr</option>
-                      <option value=4>May</option>
-                      <option value=5>Jun</option>
-                      <option value=6>Jul</option>
-                      <option value=7>Aug</option>
-                      <option value=8>Sep</option>
-                      <option value=9>Oct</option>
-                      <option value=10>Nov</option>
-                      <option value=11>Dec</option>
-                  </select>
-      
+                    <option value=0>Jan</option>
+                    <option value=1>Feb</option>
+                    <option value=2>Mar</option>
+                    <option value=3>Apr</option>
+                    <option value=4>May</option>
+                    <option value=5>Jun</option>
+                    <option value=6>Jul</option>
+                    <option value=7>Aug</option>
+                    <option value=8>Sep</option>
+                    <option value=9>Oct</option>
+                    <option value=10>Nov</option>
+                    <option value=11>Dec</option>
+                </select>
       
                   <label for="year"></label>
                   <select class="form-control col-sm-4" name="year" id="year" onchange="jump()">
@@ -82,8 +78,9 @@
         </div>
       </div>
 
-      <div class="sub-main2" id="sub-main2"><p>area to display details of selected time-slot</p></div>
-      
+      <div class="sub-main2" id="sub-main2">
+        <div class="text-area">Event Details</div>
+      </div>
     </main>
   </div>
 
