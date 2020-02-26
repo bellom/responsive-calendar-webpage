@@ -32,6 +32,19 @@ main {
   margin-left: 4px;
 }
 
+.day {
+  color: azure;
+}
+
+td:hover {
+  background-color: azure;
+  cursor: pointer;
+}
+
+.event {
+  background-color: blueviolet;
+}
+
 @media (min-width: 600px) {
   aside {
     flex: 0 0 200px;

@@ -9,6 +9,10 @@ let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oc
 let monthAndYear = document.getElementById("monthAndYear");
 showCalendar(currentMonth, currentYear);
 
+const events = {
+  [new Date(2020, 1, 28)]: "Technical Test", 
+  [new Date(2020, 1, 29)]: "Technical Test Result"
+}
 
 function next() {
     currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
@@ -28,17 +32,13 @@ function jump() {
     showCalendar(currentMonth, currentYear);
 }
 
-const events = {
-    [new Date(2020, 2, 26)]: "Technical Test", 
-    [new Date(2020, 2, 28)]: "Technical Test Result"
-}
-
 function showCalendar(month, year) {
 
     let firstDay = (new Date(year, month)).getDay();
     let daysInMonth = 32 - new Date(year, month, 32).getDate();
 
-    let tbl = document.getElementById("calendar-body"); // body of the calendar
+    // body of the calendar
+    let tbl = document.getElementById("calendar-body"); 
 
     // clearing all previous cells
     tbl.innerHTML = "";
@@ -57,14 +57,10 @@ function showCalendar(month, year) {
         //creating individual cells, filing them up with data.
         for (let j = 0; j < 7; j++) {
             if (i === 0 && j < firstDay) {
-                let cell = document.createElement("td");
-                let aTag = document.createElement('a'); 
-                let cellText = document.createTextNode("");
-                
-                cell.appendChild(cellText);
-                cell.appendChild(aTag);
-                row.appendChild(cell);
-
+              let cell = document.createElement("td");
+              let cellText = document.createTextNode("");
+              cell.appendChild(cellText);
+              row.appendChild(cell);
             }
             else if (date > daysInMonth) {
                 break;
@@ -72,16 +68,42 @@ function showCalendar(month, year) {
             else {
                 let cell = document.createElement("td");
                 let cellText = document.createTextNode(date);
-    
+            
+                // color today's date
+                if (date === 28) {
+                  cell.classList.add("event")
+                  cell.setAttribute("id", "eDay1");
+                } 
+
+                if (date === 29) {
+                  cell.classList.add("event")
+                  cell.setAttribute("id", "eDay2");
+                } 
+
+                // color events dates
                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
-                    cell.classList.add("bg-info");
-                } // color today's date
+                  cell.classList.add("day");
+                } 
                 cell.appendChild(cellText);
                 row.appendChild(cell);
                 date++;
+                // function onClick to display data in display area block
+                cell.onclick = function() { 
+                  let dArea = document.getElementById("sub-main2");
+                  if (event.target.id === "eDay1"){
+                    var eventDetails = events[new Date(2020, 1, 28)]
+                  } 
+                  else {
+                    eventDetails = events[new Date(2020, 1, 29)]
+                  }
+                  dArea.innerHTML = eventDetails;
+                }
             }
         }
 
-        tbl.appendChild(row); // appending each row into calendar body.
+        // appending each row into calendar body.
+        tbl.appendChild(row); 
     }
 }
+
+
