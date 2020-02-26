@@ -79,7 +79,7 @@ td:hover {
 
 @media (max-width: 500px) {
   .glyphicon {
-    margin-left: 45px;
+    margin-left: 40px;
   }    
   .side-text {
     display: none
@@ -92,9 +92,15 @@ td:hover {
   }    
 }
 
+@media (max-width: 442px) {
+  .glyphicon {
+    margin-left: 5px;
+  }    
+}
+
 @media (min-width: 250px) {
   aside {
-    flex: 1 0 5px;
+    flex: 0.5 0 5px;
   }
 
   main {
