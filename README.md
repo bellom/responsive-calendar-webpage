@@ -1,7 +1,7 @@
 # Responsive Event Calendar
 A simple Javascript responsive event calendar with Mobile, Tablet and PC view.
 
-<img width="991" alt="calendar" src="![image](https://user-images.githubusercontent.com/31897434/75375696-e4010200-58ce-11ea-9bb8-4dd70b236243.png)">
+<img width="991" alt="calendar" src="https://user-images.githubusercontent.com/31897434/75375696-e4010200-58ce-11ea-9bb8-4dd70b236243.png">
 
 ## Live
 -[Live](https://raw.githack.com/bellom/responsive-calendar-webpage/sample1/index.html)
